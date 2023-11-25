@@ -45,7 +45,7 @@ export function Bookings() {
     async function fetchData() {
       try {
         const data = await (
-          await axios.get("/api/bookings/getallbookings")
+          await axios.get("https://render-starlette.onrender.com/api/bookings/getallbookings")
         ).data;
         setbookings(data);
         setloading(false);
@@ -106,7 +106,7 @@ export function Rooms() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await (await axios.get("/api/rooms/getallrooms")).data;
+        const data = await (await axios.get("https://render-starlette.onrender.com/api/rooms/getallrooms")).data;
         setrooms(data);
         setloading(false);
       } catch (error) {
@@ -167,7 +167,7 @@ export function Users() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await (await axios.get("/api/users/getallusers")).data;
+        const data = await (await axios.get("https://render-starlette.onrender.com/api/users/getallusers")).data;
         setusers(data);
         setloading(false);
       } catch (error) {
@@ -241,7 +241,7 @@ export function Addroom() {
 
     try {
         setloading(true)
-        const result =await (await axios.post('/api/rooms/addroom', newroom)).data
+        const result =await (await axios.post('https://render-starlette.onrender.com/api/rooms/addroom', newroom)).data
         console.log(result)
         setloading(false)
         Swal.fire('Congratulations','New Room Added Successfully','success').then(result=>{

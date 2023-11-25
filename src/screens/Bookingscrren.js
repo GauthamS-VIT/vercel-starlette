@@ -65,7 +65,7 @@ function Bookingscrren() {
 
     try {
       setloading(true);
-      const result = await axios.post("/api/bookings/bookroom", bookingDetails);
+      const result = await axios.post("https://render-starlette.onrender.com/api/bookings/bookroom", bookingDetails);
       setloading(false);
       Swal.fire("Congratulations","Your Room Booked successfully","successs").then(result=>{
         window.location.href='/profile';

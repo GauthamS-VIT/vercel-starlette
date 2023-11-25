@@ -18,7 +18,7 @@ function Loginscreen() {
             }
             try{
                 setloading(true);
-                const result= await axios.post('/api/users/login',user)
+                const result= await axios.post('https://render-starlette.onrender.com/api/users/login',user)
                 setloading(false);
 
                 localStorage.setItem('currentUser',JSON.stringify(result.data));

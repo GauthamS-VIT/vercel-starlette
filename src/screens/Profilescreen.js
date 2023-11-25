@@ -53,7 +53,7 @@ export function MyBookings() {
       try {
         setloading(true);
         const data = await (
-          await axios.post("/api/bookings/getbookingsbyuserid", {
+          await axios.post("https://render-starlette.onrender.com/api/bookings/getbookingsbyuserid", {
             userid: user._id,
           })
         ).data;
@@ -73,7 +73,7 @@ export function MyBookings() {
     try {
       setloading(true);
       const result = await (
-        await axios.post("/api/bookings/cancelbooking", { bookingid, roomid })
+        await axios.post("https://render-starlette.onrender.com/api/bookings/cancelbooking", { bookingid, roomid })
       ).data;
       console.log(result);
       setloading(false);
